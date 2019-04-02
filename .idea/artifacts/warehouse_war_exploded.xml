@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="warehouse:war exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/warehouse_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="warehouse" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="warehouse/web/Web" />
+    </root>
+  </artifact>
+</component>

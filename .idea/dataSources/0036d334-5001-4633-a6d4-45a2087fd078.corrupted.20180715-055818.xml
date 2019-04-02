@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="poli_farb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="poli_farb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="test">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="7" parent="1" name="sakila"/>
+    <table id="8" parent="2" name="customer"/>
+    <table id="9" parent="2" name="store_kiev"/>
+    <table id="10" parent="2" name="tmc"/>
+    <column id="11" parent="8" name="idcustomer">
+      <Position>1</Position>
+      <DataType>smallint(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="12" parent="8" name="customername">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="13" parent="8" name="customeraddress">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="14" parent="8" name="customername_UNIQUE">
+      <ColNames>customername</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="15" parent="8" name="PRIMARY">
+      <ColNames>idcustomer</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="16" parent="8" name="customername_UNIQUE">
+      <ColNames>customername</ColNames>
+      <UnderlyingIndexName>customername_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="17" parent="9" name="TMCcode">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="9" name="TMC_amount">
+      <Position>2</Position>
+      <DataType>int(10) unsigned zerofill|0</DataType>
+    </column>
+    <index id="19" parent="9" name="TMCcode_UNIQUE">
+      <ColNames>TMCcode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="9" name="PRIMARY">
+      <ColNames>TMCcode</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="21" parent="9" name="TMCcode_UNIQUE">
+      <ColNames>TMCcode</ColNames>
+      <UnderlyingIndexName>TMCcode_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="22" parent="9" name="TMCcode">
+      <ColNames>TMCcode</ColNames>
+      <RefSchemaName>poli_farb</RefSchemaName>
+      <RefTableName>tmc</RefTableName>
+      <RefColNames>TMCcode</RefColNames>
+      <OnUpdate>no-action</OnUpdate>
+      <OnDelete>no-action</OnDelete>
+    </foreign-key>
+    <column id="23" parent="10" name="TMCcode">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="10" name="TMCname">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="10" name="TMCcode_UNIQUE">
+      <ColNames>TMCcode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="10" name="PRIMARY">
+      <ColNames>TMCcode</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="27" parent="10" name="TMCcode_UNIQUE">
+      <ColNames>TMCcode</ColNames>
+      <UnderlyingIndexName>TMCcode_UNIQUE</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

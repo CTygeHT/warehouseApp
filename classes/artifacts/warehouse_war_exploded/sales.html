@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПП ПФ ІЇ</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet"/>
+    <link href="assets/css/style.css" rel="stylesheet"/>
+    <link href="assets/css/main-style.css" rel="stylesheet"/>
+</head>
+
+<body>
+<!--  wrapper -->
+<div id="wrapper">
+    <!-- navbar top -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+        <!-- navbar-header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse"><span
+                    class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="index.html"> <img src="assets/img/logo.png" alt=""/> </a></div>
+        <!-- end navbar-header -->
+        <!-- navbar-top-links -->
+        <ul class="nav navbar-top-links navbar-right">
+            <!-- main dropdown -->
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i
+                    class="fa fa-user fa-3x"></i> </a>
+                <!-- dropdown user-->
+                <ul class="dropdown-menu dropdown-user">
+                    <li class="divider"></li>
+                    <li><a href="index.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+                </ul>
+                <!-- end dropdown-user -->
+            </li>
+            <!-- end main dropdown -->
+        </ul>
+        <!-- end navbar-top-links -->
+
+    </nav>
+    <!-- end navbar top -->
+
+    <!-- navbar side -->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <!-- sidebar-collapse -->
+        <div class="sidebar-collapse">
+            <!-- side-menu -->
+            <ul class="nav" id="side-menu">
+                <li>
+                    <!-- user image section-->
+                    <div class="user-section">
+                        <div class="user-section-inner"><img src="assets/img/user.jpg" alt=""></div>
+                        <div class="user-info">
+                            <div>Jonny <strong>Deen</strong></div>
+                            <div class="user-text-online"><span
+                                    class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                            </div>
+                        </div>
+                    </div>
+                    <!--end user image section-->
+                </li>
+                <li><a href="tablesFull.html"><i class="fa fa-table fa-fw"></i>Склад</a></li>
+                <li><a href="transactions.html"><i class="fa fa-table fa-fw"></i>Журнал операцій</a></li>
+                <li><a href="newtmc.html"><i class="fa fa-edit fa-fw"></i>Введення нового товару</a></li>
+                <li><a href="purchase.html"><i class="fa fa-edit fa-fw"></i>Покупка товарів</a></li>
+                <li class="selected"><a href="sales.html"><i class="fa fa-edit fa-fw"></i>Продаж товарів</a></li>
+                <li><a href="moving.html"><i class="fa fa-edit fa-fw"></i>Переміщення товарів</a></li>
+                <li><a href="formulation.html"><i class="fa fa-edit fa-fw"></i>Внесення рецептури</a></li>
+                <li><a href="production.html"><i class="fa fa-edit fa-fw"></i>Внесення наряду</a></li>
+                <li><a href="timeline.html"><i class="fa fa-report fa-fw"></i>Звіт</a></li>
+            </ul>
+            <!-- end side-menu -->
+        </div>
+        <!-- end sidebar-collapse -->
+    </nav>
+    <!-- end navbar side -->
+    <!--  page-wrapper -->
+    <div id="page-wrapper">
+        <div class="row">
+            <!-- page header -->
+            <div class="col-lg-12">
+                <h1 class="page-header">Forms</h1>
+            </div>
+            <!--end page header -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Form Elements -->
+                <div class="panel panel-default">
+                    <div class="panel-heading"> Basic Form Elements</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div>
+                                <p class="col-md-2 popover-content"> Постачальник: </p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <select class="form-control" id="customer_select"></select>
+                            </div>
+                            <div>
+                                <p class="col-md-2 popover-content"> Склад: </p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class="form-group">
+                                    <select class="form-control-edited" id="warehouse"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="row" class="row">
+                            <div class="col-lg-6" id="selectGr">
+                                <div class="form-group">
+                                    <select class="form-control" id="tmc_select1"></select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6" id="inputGr">
+                                <div class="form-group has-success" id="div1">
+                                    <input type="text" class="form-control" id="input1">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-primary btn-circle"
+                                        onClick="addRowPurch(); getTmcList(TmcListIndex)" id="add">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                                <!--<button type="submit" class="btn btn-primary" onclick="addSale()">Submit Button-->
+                                <button type="submit" class="btn btn-primary"
+                                        onclick="addTrans($('#warehouse').val(),$('#customer_select').val(),-1)">Submit Button
+                                </button>
+                                <button type="reset" class="btn btn-success">Reset Button</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Form Elements -->
+            </div>
+        </div>
+    </div>
+    <!-- end page-wrapper -->
+
+</div>
+<!-- end wrapper -->
+
+<!-- Core Scripts - Include with every page -->
+<!--<script src="assets/plugins/jquery-1.10.2.js"></script> -->
+<script src="assets/plugins/jquery-3.3.1.js"></script>
+<script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="assets/plugins/pace/pace.js"></script>
+<script src="assets/scripts/siminta.js"></script>
+<script src="assets/scripts/script.js"></script>
+
+<script>
+    var items = 0;
+    var leftoverList = [];
+    var errorLeftover = false;
+    $(document).ready(function () {
+        getCustList();
+        getTmcList(1);
+        getWH();
+    });
+
+    $(document).on('input', '#inputGr', checkLeftover);
+    $(document).on('input', '#sumWeight', PortionsWeight);
+    $(document).on('change', '#selectGr', getLeftover);
+    $(function () {
+        $('#pant_select').change(function () {
+            getFormula();
+
+        })
+    });
+
+</script>
+<!--<script>
+    document.getElementsByTagName('input')[0].onkeypress = function(e) {
+
+        e = e || event;
+
+        if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+        var chr = getChar(e);
+
+        // с null надо осторожно в неравенствах, т.к. например null >= '0' => true!
+        // на всякий случай лучше вынести проверку chr == null отдельно
+        if (chr == null) return;
+
+        if (chr < '0' || chr > '9') {
+            return false;
+        }
+
+    }
+
+    function getChar(event) {
+        if (event.which == null) {
+            if (event.keyCode < 32) return null;
+            return String.fromCharCode(event.keyCode) // IE
+        }
+
+        if (event.which != 0 && event.charCode != 0) {
+            if (event.which < 32) return null;
+            return String.fromCharCode(event.which) // остальные
+        }
+
+        return null; // специальная клавиша
+    }
+</script>-->
+</body>
+</html>

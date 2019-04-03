@@ -15,7 +15,8 @@ public class MySqlClass {
 
     public static void Conn() throws SQLException, ClassNotFoundException{
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/poli_farb?user=root&password=M@dag75askar&serverTimezone=UTC&encodin=UTF-8&useUnicode=true&characterEncoding=UTF-8");
+        //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/poli_farb?user=root&password=M@dag75askar&serverTimezone=UTC&encodin=UTF-8&useUnicode=true&characterEncoding=UTF-8");
+        conn = DriverManager.getConnection("jdbc:mysql://jws-app-mysql:3306/poli_farb?user=root&password=M@dag75askar&serverTimezone=UTC&encodin=UTF-8&useUnicode=true&characterEncoding=UTF-8");
 
     }
 
